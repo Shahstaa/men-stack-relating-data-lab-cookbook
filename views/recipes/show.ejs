@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= recipe.name %></title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <h1><%= recipe.name %></h1>
+  <p><%= recipe.instructions %></p>
+  <a href="/recipes/<%= recipe._id %>/edit">Edit Recipe</a>
+</body>
+</html>
+
+
+
+

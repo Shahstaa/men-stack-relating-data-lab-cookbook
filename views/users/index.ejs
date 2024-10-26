@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Community</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Explore Our Community</h1>
+
+    <div class="user-list">
+        <% if (users.length > 0) { %>
+            <ul>
+                <% users.forEach(user => { %>
+                    <li>
+                        <a href="/users/<%= user._id %>"><%= user.username %></a>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>No users found. Be the first to join!</p>
+        <% } %>
+    </div>
+</body>
+</html>
