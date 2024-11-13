@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <title><%= pantry.name %></title>
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <div class="show-page-container">
+    <div class="show-img"></div>
+    <div class="show-info-container">
+    <div class="show-header">
+  <h1><%= pantry.name %></h1>
+  </div> 
+  <div class="show-details-container">
+  <p><strong>ingredients:</strong> <%= pantry.ingredients %></p>
+  </div>
+  <a href="/users/<%= user._id %>/foods/<%= pantry._id %>/edit" class="edit">
+    Edit this item
+  </a>
+  <form
+    action="/users/<%= user._id %>/foods/<%= pantry._id %>?_method=DELETE"
+    method="POST"
+  >
+    <button type="submit">Delete this application</button>
+  </form>
+  </div>
+  </div>
+</body>
+</html>

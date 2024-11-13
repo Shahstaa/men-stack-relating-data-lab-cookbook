@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title><%= users.username %> 's Pantry</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <div class="profile-container">
+    <h1><%= users.username %> 's Pantry</h1>
+    <div class="profile-card-container">
+    <ul>
+        <% const pantry = users.pantry %>
+        <% pantry.forEach((food) => { %>
+            <li>
+                <strong><%= food.name %></strong> <br />
+                Cuisine: <%= food.cuisine %><br />
+                Calories: <%= food.calories %><br />
+                Ingredients: <%= food.ingredients %>
+            </li>
+        <% }) %>
+    </ul>
+    </div>
+    </div>
+</body>
+</html>

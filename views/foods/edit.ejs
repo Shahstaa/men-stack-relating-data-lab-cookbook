@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Editing <%= pantry.name %></title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <div class="new-container">
+        <div class="new-form-container">
+    <h1>Edit <%= pantry.name %></h1>
+    <form 
+    action="/users/<%= user._id %>/foods/<%= pantry._id %>?_method=PUT"
+    method="POST">
+    <label for="name">Food name:</label>
+    <input type="text" name="name" id="name" value="<%= pantry.name %>"/>
+    <label for="cuisine">Cuisine:</label>
+    <input type="text" name="cuisine" id="cuisine" value="<%= pantry.cuisine %>"/>
+    <label for="calories">Calories:</label>
+    <input type="number" name="calories" id="calories" value="<%= pantry.calories %>"/>
+    <label for="ingredients">Ingredients:</label>
+    <input type="text" name="ingredients" id="ingredients" value="<%= pantry.ingredients %>"/>
+    <button type="submit">Update Item</button>
+    </form>
+    </div>
+    </div>
+</body>
+</html>

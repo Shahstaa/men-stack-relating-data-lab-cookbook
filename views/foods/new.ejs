@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Add New Item</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <div class="new-container">
+        <div class="new-form-container">
+    <h1>Add New Items</h1>
+    <form action="/users/<%= user._id %>/foods" method="POST">
+        <label for="name">Food name:</label>
+        <input type="text" name="name" id="name" />
+        <label for="cuisine">Cuisine:</label>
+        <input type="text" name="cuisine" id="cuisine" />
+        <label for="calories">Calories:</label>
+        <input type="number" name="calories" id="calories" />
+        <label for="ingredients">Ingredients:</label>
+        <input type="text" name="ingredients" id="ingredients" />
+        <button type="submit">Add Item</button>
+    </form>
+    </div>
+    </div>
+</body>
+</html>
